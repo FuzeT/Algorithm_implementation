@@ -19,7 +19,8 @@ def shell_insert(number_list):
                         number_list[pos_now + pos_range] = number_list[pos_now]
                         pos_now -= pos_range
                     number_list[pos_now + pos_range] = temp_value
-            print str(times) + " of group " + str(group) + " : " + str(number_list) + "       pos_range is      " + str(pos_range)
+            print str(times) + " of group " + str(group) + " : " + \
+                str(number_list) + "       pos_range is      " + str(pos_range)
         times += 1
         pos_range = lenth/(2**times)
 
