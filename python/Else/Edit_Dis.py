@@ -26,4 +26,4 @@ def Distance(a, b):
 
 if __name__=='__main__':
     Matrix = Distance(sys.argv[1], sys.argv[2])
-    print "The distance between " + str(sys.argv[1]) + " and " + str(sys.argv[2]) + " is : " + str(abs(Matrix[-1][-1]))[root@
+    print "The distance between " + str(sys.argv[1]) + " and " + str(sys.argv[2]) + " is : " + str(abs(Matrix[-1][-1]))
