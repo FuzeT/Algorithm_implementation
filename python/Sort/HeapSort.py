@@ -5,51 +5,51 @@ __author__ = 'Fuze'
 
 
 # Todo: Print a list as a tree.
-def print_full_tree(lis):
-    print lis
+def print_full_tree(list_of_number):
+    print list_of_number
 
 
-def heap_adjust(lis, loc):
-    if not isinstance(lis, list):
+def heap_adjust(list_of_number, loc):
+    if not isinstance(list_of_number, list):
         raise TypeError, "Input should be a list!"
-    if not lis:
+    if not list_of_number:
         return None
-    length = len(lis)
+    length = len(list_of_number)
     print loc
-    tmp = lis[loc]
+    tmp = list_of_number[loc]
     child = loc * 2 + 1
     while child < length:
-        if child + 1 < length and lis[child] < lis[child + 1]:
+        if child + 1 < length and list_of_number[child] < list_of_number[child + 1]:
             child += 1
-        if tmp < lis[child]:
-            lis[loc] = lis[child]
+        if tmp < list_of_number[child]:
+            list_of_number[loc] = list_of_number[child]
             loc = child
             child = child * 2 + 1
         else:
             break
-        lis[loc] = tmp
-    return lis
+        list_of_number[loc] = tmp
+    return list_of_number
 
 
-def init_heap(lis):
-    length = len(lis)
+def init_heap(list_of_number):
+    length = len(list_of_number)
     for i in range(length / 2, -1, -1):
-        heap_adjust(lis, i)
-        print '-' * 20 + str(lis)
-    return lis
+        heap_adjust(list_of_number, i)
+        print '-' * 20 + str(list_of_number)
+    return list_of_number
 
 
-def heap_sort(lis):
+def heap_sort(list_of_number):
     output = []
-    length = len(lis)
-    lis = init_heap(lis)
+    length = len(list_of_number)
+    list_of_number = init_heap(list_of_number)
     for i in range(length):
-        output.append(lis[0])
-        lis[0] = lis[-1]
-        lis.pop()
-        lis = heap_adjust(lis, 0)
+        output.append(list_of_number[0])
+        list_of_number[0] = list_of_number[-1]
+        list_of_number.pop()
+        list_of_number = heap_adjust(list_of_number, 0)
         print '*' * 20
-        print lis
+        print list_of_number
         print output
     return output
 

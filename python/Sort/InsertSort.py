@@ -2,20 +2,20 @@
 
 __author__ = 'fuze'
 
-def InsertSort(list_of_number):
-    if not isinstance(list_of_number, list):
+def InsertSort(number_list):
+    if not isinstance(number_list, list):
         return "Input should be a list of number"
-    lenth = len(list_of_number)
+    lenth = len(number_list)
     for i in xrange(1, lenth):
-        if list_of_number[i]<list_of_number[i-1]:
-            temp = list_of_number[i]
-            list_of_number[i] = list_of_number[i-1]
+        if number_list[i]<number_list[i-1]:
+            temp = number_list[i]
+            number_list[i] = number_list[i-1]
             pos = i-1
-            while(list_of_number[pos]>temp and pos>-1):
-                list_of_number[pos+1] = list_of_number[pos]
+            while(number_list[pos]>temp and pos>-1):
+                number_list[pos+1] = number_list[pos]
                 pos -= 1
-            list_of_number[pos+1] = temp
-        print str(i) + ' : ' + str(list_of_number)
+            number_list[pos+1] = temp
+        print str(i) + ' : ' + str(number_list)
 
 if __name__=='__main__':
     NumberList = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
